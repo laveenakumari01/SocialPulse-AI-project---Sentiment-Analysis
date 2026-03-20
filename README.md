@@ -1,127 +1,143 @@
-# SocialPulse-AI-project---Sentiment-Analysis
+# 🚀 SocialPulse AI - Sentiment Analysis Dashboard
 
-🔍 What is SocialPulse AI?
-SocialPulse AI is an end-to-end sentiment analysis web app built with Python and Streamlit. It classifies any text as Positive or Negative with a confidence score, using a Logistic Regression model trained on the Sentiment140 dataset.
-This project demonstrates a complete ML pipeline — from raw data to a live deployed web application.
+## 📸 App Preview
+<img width="1831" height="857" alt="Screenshot 2026-03-20 153658" src="https://github.com/user-attachments/assets/8db14ad5-d484-4eeb-92ee-cc8803bbd8aa" />
 
-🌐 Live Demo
-👉 Try it live →
+🔗 **Live App:**
+👉 https://socialpulse-ai-project---sentiment-analysis-bra3usdkubwgqsrucn.streamlit.app/
 
+---
 
+## 📌 Overview
 
-✨ Features
+**SocialPulse AI** is a Machine Learning-powered web application that analyzes text and predicts sentiment (Positive or Negative) in real-time.
 
-🔮 Instant Sentiment Analysis — Positive / Negative with confidence score
-📋 Batch Mode — Analyze up to 10 texts at once
-📊 Analytics Dashboard — Session stats, distribution bar, confidence breakdown
-🕓 History Panel — Track all previous analyses in a session
-⚡ Quick Examples — Try preset tweets from the sidebar
-🌙 Dark Professional UI — Custom dark theme with color-coded results
+This project is built using **Natural Language Processing (NLP)** and deployed as an interactive dashboard using Streamlit.
 
+---
 
-🖼️ Screenshots
-DashboardAnalyzeAnalyticsLive stats & recent historySingle + Batch analysisDistribution charts
+## 🎯 Features
 
-🧠 How It Works
-Raw Tweet
-   ↓
-Text Cleaning  →  Remove URLs, mentions, hashtags, special chars
-   ↓
-Lowercasing + Tokenization
-   ↓
-Porter Stemming  →  running → run, loved → love
-   ↓
-TF-IDF Vectorization  →  50,000 features, bigrams (1,2)
-   ↓
-Logistic Regression  →  Predict: Positive / Negative
-   ↓
-Confidence Score (%)
+* 🧠 Real-time sentiment prediction
+* 📊 Confidence score with progress bar
+* 🎨 Clean & modern dashboard UI
+* ⚡ Fast and interactive performance
+* 🌐 Deployed on Streamlit Cloud
 
-📊 Model Performance
-MetricScoreTraining Accuracy82.0%Testing Accuracy80.1%Precision (Positive)0.79Recall (Positive)0.82F1-Score0.80Test Set Size320,000 tweets
+---
 
-🛠️ Tech Stack
-LayerTechnologyLanguagePython 3.10+Web FrameworkStreamlitML Modelscikit-learn — Logistic RegressionNLPNLTK — Porter Stemmer, StopwordsVectorizerTF-IDF (50K features, ngram 1–2)DatasetSentiment140 (1.6M tweets)
+## 🛠️ Tech Stack
 
-🚀 Run Locally
-1. Clone the repository
-bashgit clone https://github.com/your-username/socialpulse-ai.git
-cd socialpulse-ai
-2. Install dependencies
-bashpip install -r requirements.txt
-3. Add model files
-Place these two files in the root folder (train the model or download from releases):
-sentiment_model.pkl
-vectorizer.pkl
-4. Run the app
-bashstreamlit run app.py
-Then open http://localhost:8501 in your browser.
+| Technology          | Purpose                  |
+| ------------------- | ------------------------ |
+| Python              | Core programming         |
+| Streamlit           | Web app & dashboard      |
+| Scikit-learn        | Machine Learning model   |
+| NLP (NLTK)          | Text preprocessing       |
+| TF-IDF              | Feature extraction       |
+| Logistic Regression | Sentiment classification |
 
-📁 Project Structure
-socialpulse-ai/
+---
+
+## 📂 Project Structure
+
+```
+sentiment-dashboard/
 │
-├── app.py                  # Main Streamlit application
-├── requirements.txt        # Python dependencies
-├── sentiment_model.pkl     # Trained Logistic Regression model
-├── vectorizer.pkl          # Fitted TF-IDF vectorizer
-└── README.md               # This file
+├── app.py                  # Main Streamlit app
+├── sentiment_model.pkl     # Trained ML model
+├── vectorizer.pkl          # TF-IDF vectorizer
+├── requirements.txt        # Dependencies
+└── README.md               # Documentation
+```
 
-🏋️ Training the Model
-The model was trained in Google Colab using the Sentiment140 dataset.
-python# Key training settings
-vectorizer = TfidfVectorizer(
-    max_features=50000,
-    ngram_range=(1, 2),
-    min_df=5,
-    max_df=0.9,
-    sublinear_tf=True
-)
+---
 
-model = LogisticRegression(
-    C=4.0,
-    max_iter=3000,
-    solver='saga',
-    n_jobs=-1
-)
-To retrain the model yourself, open the Colab notebook and run all cells. The .pkl files are saved automatically.
+## ⚙️ How It Works
 
-⚠️ Limitations
+1. User enters text input
+2. Text is cleaned using NLP techniques
+3. TF-IDF converts text into numerical features
+4. Logistic Regression model predicts sentiment
+5. Output is displayed with confidence score
 
-Binary only — classifies Positive or Negative (no neutral class yet)
-English only — trained on English tweets; other languages may give poor results
-Sarcasm — irony and sarcasm can sometimes fool the model
-Context — short or ambiguous texts may have lower confidence
+---
 
+## 📊 Model Details
 
-🔮 Future Improvements
+* Algorithm: Logistic Regression
+* Dataset: Sentiment140
+* Accuracy: ~80%
+* Feature Engineering: TF-IDF (unigram + bigram)
 
- Neutral sentiment class (3-way classification)
- BERT / Transformer fine-tuning for higher accuracy
- CSV file upload for bulk analysis
- Twitter/X URL input — paste a link and analyze directly
- Emoji and slang support
- Multi-language sentiment detection
- Export results as PDF or CSV
+---
 
+## 🚀 Installation (Run Locally)
 
-📚 Dataset
-Sentiment140 by Go, Bhayani & Huang (Stanford University, 2009)
+### 1. Clone the repository
 
-1,600,000 tweets
-Labels: 0 = Negative, 4 = Positive (remapped to 0/1)
-Source: Kaggle
+```bash
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+```
 
+### 2. Install dependencies
 
-👩‍💻 Author
-Laveena Kumari
+```bash
+pip install -r requirements.txt
+```
 
-GitHub: @laveenakumari01
+### 3. Run the app
 
+```bash
+streamlit run app.py
+```
 
-📄 License
-This project is licensed under the MIT License — feel free to use, modify, and share.
+---
 
-🌟 Support
-If you found this project helpful, please consider giving it a ⭐ on GitHub — it means a lot!
+## 🌍 Deployment
 
-Built with ❤️ using Python, scikit-learn & Streamlit
+This app is deployed using **Streamlit Cloud** for public access.
+
+---
+
+## 💼 Use Cases
+
+* Social media sentiment analysis
+* Product review analysis
+* Customer feedback insights
+* Brand monitoring
+
+---
+
+## 🔮 Future Improvements
+
+* 📊 Add data visualization charts
+* 📂 Upload CSV for bulk analysis
+* 🌐 Multi-language support
+* 🤖 Upgrade to deep learning (BERT)
+
+---
+
+## 👨‍💻 Author
+
+**Your Name**
+💼 Aspiring Data Scientist & ML Engineer
+
+---
+
+## ⭐ Show Your Support
+
+If you like this project:
+
+* ⭐ Star this repository
+* 🍴 Fork it
+* 📢 Share it
+
+---
+
+## 📬 Contact
+
+Feel free to connect for collaborations or freelance work!
+
+---
